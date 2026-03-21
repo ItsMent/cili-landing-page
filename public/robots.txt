@@ -1,0 +1,8 @@
+# CILI - Learn Chinese
+# https://cililearnchinese.com
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://cililearnchinese.com/sitemap.xml

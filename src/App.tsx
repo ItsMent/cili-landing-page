@@ -58,6 +58,7 @@ const SkeletonImage = ({ src, alt, className, style }: { src: string, alt: strin
         src={src}
         alt={alt}
         className={className}
+        loading="lazy"
         onLoad={() => setLoaded(true)}
         style={{
           opacity: loaded ? 1 : 0,
