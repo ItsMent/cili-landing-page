@@ -1,343 +1,32 @@
 import { useState, useEffect } from 'react';
+import { Routes, Route, useNavigate, useLocation } from 'react-router-dom';
 import { Infinity, Zap, ShieldCheck, X, CheckCircle, ChevronDown, ChevronUp, Search, Code, Database, Terminal, Menu, FileText, Layers, Cpu, MessageSquare } from 'lucide-react';
 import './index.css';
 
-// Import Assets
-import bundleImg from './assets/Cili - CoverForGumRoad/Hsk1-6Bundle V2.png';
-import hsk6Img from './assets/Cili - CoverForGumRoad/HSK_6_Vocabulary 2500 Words 5000 Example Sentences.png';
-import hsk6ExtendedImg from './assets/Cili - CoverForGumRoad/HSK_6_Vocabulary 2500 Words 10000 Example Sentences.png';
-import hsk5Img from './assets/Cili - CoverForGumRoad/HSK_5_Vocabulary 1300 Words 2600 Example Sentences.png';
-import hsk5ExtendedImg from './assets/Cili - CoverForGumRoad/HSK_5_Vocabulary 1300 Words 5200 Example Sentences.png';
-import hsk4Img from './assets/Cili - CoverForGumRoad/HSK_4_Vocabulary 600 Words 1200 Example Sentences.png';
-import hsk4ExtendedImg from './assets/Cili - CoverForGumRoad/HSK_4_Vocabulary 600 Words 2400 Example Sentences.png';
-import hsk3Img from './assets/Cili - CoverForGumRoad/HSK_3_Vocabulary 300 Words 600 Example Sentences.png';
-import hsk3ExtendedImg from './assets/Cili - CoverForGumRoad/HSK_3_Vocabulary 300 Words 1200 Example Sentences.png';
-import hsk2Img from './assets/Cili - CoverForGumRoad/HSK_2_Vocabulary 150 Words 300 Example Sentences.png';
-import hsk2ExtendedImg from './assets/Cili - CoverForGumRoad/HSK_2_Vocabulary 150 Words 600 Example Sentences.png';
-import hsk1Img from './assets/Cili - CoverForGumRoad/HSK_1_Vocabulary 150 Words 300 Example Sentences.png';
-import hsk1ExtendedImg from './assets/Cili - CoverForGumRoad/HSK_1_Vocabulary 150 Words 600 Example Sentences.png';
-import hsk6Preview from './assets/Samples/hsk6-preview.pdf';
-import hsk6ExtendedPreview from './assets/Samples/hsk6-extended-preview.pdf';
-import hsk5Preview from './assets/Samples/hsk5-preview.pdf';
-import hsk5ExtendedPreview from './assets/Samples/hsk5-extended-preview.pdf';
-import hsk4Preview from './assets/Samples/hsk4-preview.pdf';
-import hsk4ExtendedPreview from './assets/Samples/hsk4-extended-preview.pdf';
-import hsk3Preview from './assets/Samples/hsk3-preview.pdf';
-import hsk3ExtendedPreview from './assets/Samples/hsk3-extended-preview.pdf';
-import hsk2Preview from './assets/Samples/hsk2-preview.pdf';
-import hsk2ExtendedPreview from './assets/Samples/hsk2-extended-preview.pdf';
-import hsk1Preview from './assets/Samples/hsk1-preview.pdf';
-import hsk1ExtendedPreview from './assets/Samples/hsk1-extended-preview.pdf';
+import { products, type Product } from './data/products';
+import SkeletonImage from './components/SkeletonImage';
+import ProductPage from './pages/ProductPage';
+
 import laptopImg from './assets/Samples/Laptop v2.png';
 import sampleHsk2x from './assets/Samples/Sample Hsk 2x.jpeg';
 import sampleHsk4x from './assets/Samples/Sample Hsk 4x.jpeg';
 import ciliLogo from './assets/CILI.png';
 import tiktokIcon from './assets/Icons/tiktokpng.png';
-import sentencePackImg from './assets/sentence-pack.png';
-
-const SkeletonImage = ({ src, alt, className, style }: { src: string, alt: string, className?: string, style?: React.CSSProperties }) => {
-  const [loaded, setLoaded] = useState(false);
-
-  return (
-    <div style={{ position: 'relative', width: '100%', height: '100%', ...style }} className={className}>
-      {!loaded && (
-        <div
-          className="skeleton"
-          style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '100%',
-            borderRadius: 'inherit',
-            zIndex: 1
-          }}
-        />
-      )}
-      <img
-        src={src}
-        alt={alt}
-        className={className}
-        loading="lazy"
-        onLoad={() => setLoaded(true)}
-        style={{
-          opacity: loaded ? 1 : 0,
-          transition: 'opacity 0.5s ease',
-          width: '100%',
-          height: '100%',
-          objectFit: 'contain'
-        }}
-      />
-    </div>
-  );
-};
-
-const products = [
-  {
-    id: 'hsk1-6',
-    name: 'HSK 1\u20136 Complete Vocabulary & Sentence Pack',
-    description: 'The ultimate bundle. Get all 5,000 HSK words precisely mapped to beautifully formatted example sentences with Pinyin and translations.',
-    price: '39.99',
-    originalPrice: '66.94',
-    link: 'https://cililearnchinese.gumroad.com/l/hsk1-6-complete-chinese-vocabulary-bundle-standard',
-    preview: hsk6ExtendedPreview,
-    image: bundleImg,
-    bundleImages: [hsk1Img, hsk2Img, hsk3Img, hsk4Img, hsk5Img, hsk6Img],
-    featured: true,
-    isBundle: true,
-    tag: 'BEST VALUE \u2022 SAVE 40%',
-    variants: [
-      {
-        id: 'standard',
-        name: 'Standard Bundle',
-        price: '39.99',
-        originalPrice: '66.94',
-        link: 'https://cililearnchinese.gumroad.com/l/hsk1-6-complete-chinese-vocabulary-bundle-standard',
-        image: bundleImg,
-        bundleImages: [hsk1Img, hsk2Img, hsk3Img, hsk4Img, hsk5Img, hsk6Img],
-        preview: hsk6Preview,
-        description: 'Get all 5,000 HSK words from levels 1-6, including 10,000 foundational example sentences (2 per word). Clean, print-ready PDF format.'
-      },
-      {
-        id: 'extended',
-        name: 'Extended Bundle',
-        price: '54.99',
-        originalPrice: '90.94',
-        link: 'https://cililearnchinese.gumroad.com/l/hsk1-6-complete-chinese-vocabulary-bundle-extended',
-        image: bundleImg,
-        bundleImages: [hsk1ExtendedImg, hsk2ExtendedImg, hsk3ExtendedImg, hsk4ExtendedImg, hsk5ExtendedImg, hsk6ExtendedImg],
-        preview: hsk6ExtendedPreview,
-        description: 'The ultimate collection. All 5,000 HSK words plus 20,000 sentences (4 per word). Unmatched context for advanced mastery.'
-      }
-    ]
-  },
-  {
-    id: 'hsk1-3',
-    name: 'HSK 1\u20133 Junior Vocabulary Pack',
-    description: 'Master the fundamentals. Get all HSK 1, 2, and 3 words precisely mapped to example sentences.',
-    price: '9.99',
-    originalPrice: '15.97',
-    link: 'https://cililearnchinese.gumroad.com/l/hsk1-3-chinese-vocabulary-bundle-standard',
-    preview: hsk3ExtendedPreview,
-    image: bundleImg,
-    bundleImages: [hsk1Img, hsk2Img, hsk3Img],
-    isBundle: true,
-    tag: 'Starter Bundle \u2022 SAVE 37%',
-    variants: [
-      {
-        id: 'standard',
-        name: 'Standard Pack',
-        price: '9.99',
-        originalPrice: '15.97',
-        link: 'https://cililearnchinese.gumroad.com/l/hsk1-3-chinese-vocabulary-bundle-standard',
-        image: bundleImg,
-        bundleImages: [hsk1Img, hsk2Img, hsk3Img],
-        preview: hsk3Preview,
-        description: 'Foundational vocabulary for HSK 1, 2, and 3. Includes 1,200 sentences (2 per word) to build your core Chinese proficiency.'
-      },
-      {
-        id: 'extended',
-        name: 'Extended Pack',
-        price: '14.99',
-        originalPrice: '24.97',
-        link: 'https://cililearnchinese.gumroad.com/l/hsk1-3-chinese-vocabulary-bundle-extended',
-        image: bundleImg,
-        bundleImages: [hsk1ExtendedImg, hsk2ExtendedImg, hsk3ExtendedImg],
-        preview: hsk3ExtendedPreview,
-        description: 'Deep dive into HSK 1-3. Includes 2,400 sentences (4 per word) for maximum context and faster retention during your early stages.'
-      }
-    ]
-  },
-  {
-    id: 'hsk4-6',
-    name: 'HSK 4\u20136 Mastery Vocabulary Pack',
-    description: 'Reach advanced proficiency. Complete collection of HSK 4, 5, and 6 words with context-rich sentences.',
-    price: '29.99',
-    originalPrice: '50.97',
-    link: 'https://cililearnchinese.gumroad.com/l/hsk4-6-chinese-vocabulary-bundle-standard',
-    preview: hsk6ExtendedPreview,
-    image: bundleImg,
-    bundleImages: [hsk4Img, hsk5Img, hsk6Img],
-    isBundle: true,
-    tag: 'Mastery Bundle \u2022 SAVE 41%',
-    variants: [
-      {
-        id: 'standard',
-        name: 'Standard Pack',
-        price: '29.99',
-        originalPrice: '50.97',
-        link: 'https://cililearnchinese.gumroad.com/l/hsk4-6-chinese-vocabulary-bundle-standard',
-        image: bundleImg,
-        bundleImages: [hsk4Img, hsk5Img, hsk6Img],
-        preview: hsk6Preview,
-        description: 'Intermediate to advanced vocabulary for HSK 4, 5, and 6. Includes 8,800 sentences (2 per word) to master advanced context.'
-      },
-      {
-        id: 'extended',
-        name: 'Extended Pack',
-        price: '39.99',
-        originalPrice: '65.97',
-        link: 'https://cililearnchinese.gumroad.com/l/hsk4-6-chinese-vocabulary-bundle-extended',
-        image: bundleImg,
-        bundleImages: [hsk4ExtendedImg, hsk5ExtendedImg, hsk6ExtendedImg],
-        preview: hsk6ExtendedPreview,
-        description: 'The complete set for HSK 4-6. Includes 17,600 sentences (4 per word) for true native-level context and mastery of complex word usage.'
-      }
-    ]
-  },
-  {
-    id: 'starter-sentences',
-    name: 'Starter Sentence Pack',
-    description: '1,000 foundational sentences. Perfect for building your initial sentence-mining database.',
-    price: '6.99',
-    link: 'https://cililearnchinese.gumroad.com/l/starter-sentences',
-    image: sentencePackImg,
-    tag: 'FIRST STEPS \u2022 1K',
-    isSentencePack: true
-  },
-  {
-    id: 'practice-sentences',
-    name: 'Practice Sentence Pack',
-    description: '3,000 practical sentences. Expand your vocabulary and master daily usage patterns.',
-    price: '14.99',
-    link: 'https://cililearnchinese.gumroad.com/l/practice-sentences',
-    image: sentencePackImg,
-    tag: 'CORE PRACTICE \u2022 3K',
-    isSentencePack: true
-  },
-  {
-    id: 'immersion-sentences',
-    name: 'Immersion Sentence Pack',
-    description: '5,000 immersive sentences. Designed for rapid comprehension and natural context.',
-    price: '19.99',
-    link: 'https://cililearnchinese.gumroad.com/l/immersion-sentences',
-    image: sentencePackImg,
-    tag: 'IMMERSION SET \u2022 5K',
-    isSentencePack: true,
-    featured: true
-  },
-  {
-    id: 'advanced-sentences',
-    name: 'Advanced Sentence Pack',
-    description: '10,000 comprehensive sentences. Master complex grammar and sophisticated word usage.',
-    price: '39.99',
-    link: 'https://cililearnchinese.gumroad.com/l/advanced-sentences',
-    image: sentencePackImg,
-    tag: 'FLUENCY BUILDER \u2022 10K',
-    isSentencePack: true
-  },
-  {
-    id: 'pro-sentences',
-    name: 'Pro Mastery Sentence Pack',
-    description: '20,000 extensive sentences. A massive expansion for deep linguistic immersion.',
-    price: '79.99',
-    link: 'https://cililearnchinese.gumroad.com/l/pro-sentences',
-    image: sentencePackImg,
-    tag: 'DEEP IMMERSION \u2022 20K',
-    isSentencePack: true
-  },
-  {
-    id: 'master-sentences',
-    name: 'Master Sentence Pack',
-    description: '30,000 ultimate sentences. The complete linguistic database for native-level fluency.',
-    price: '89.99',
-    link: 'https://cililearnchinese.gumroad.com/l/master-sentences',
-    image: sentencePackImg,
-    tag: 'COMPLETE IMMERSION \u2022 30K',
-    isSentencePack: true,
-    featured: true
-  },
-  {
-    id: 'hsk6',
-    name: 'HSK 6 Vocabulary',
-    description: 'Master advanced Chinese with 2,500 core words accompanied by 5,000 example sentences.',
-    price: '21.99',
-    link: 'https://cililearnchinese.gumroad.com/l/hsk6-chinese-vocabulary-standard',
-    image: hsk6Img,
-    tag: 'Advanced',
-    variants: [
-      { id: 'standard', name: 'Standard Pack', price: '21.99', link: 'https://cililearnchinese.gumroad.com/l/hsk6-chinese-vocabulary-standard', image: hsk6Img, preview: hsk6Preview },
-      { id: 'extended', name: 'Extended Pack', price: '26.99', link: 'https://cililearnchinese.gumroad.com/l/hsk6-chinese-vocabulary-extended', image: hsk6ExtendedImg, preview: hsk6ExtendedPreview }
-    ]
-  },
-  {
-    id: 'hsk5',
-    name: 'HSK 5 Vocabulary',
-    description: 'Bridge the gap to fluency with 1,300 essential upper-intermediate words and 2,600 examples.',
-    price: '16.99',
-    link: 'https://cililearnchinese.gumroad.com/l/hsk5-chinese-vocabulary-standard',
-    image: hsk5Img,
-    tag: 'Upper Intermediate',
-    variants: [
-      { id: 'standard', name: 'Standard Pack', price: '16.99', link: 'https://cililearnchinese.gumroad.com/l/hsk5-chinese-vocabulary-standard', image: hsk5Img, preview: hsk5Preview },
-      { id: 'extended', name: 'Extended Pack', price: '21.99', link: 'https://cililearnchinese.gumroad.com/l/hsk5-chinese-vocabulary-extended', image: hsk5ExtendedImg, preview: hsk5ExtendedPreview }
-    ]
-  },
-  {
-    id: 'hsk4',
-    name: 'HSK 4 Vocabulary',
-    description: 'Solidify your foundation with 600 intermediate words and 1,200 practical examples.',
-    price: '11.99',
-    link: 'https://cililearnchinese.gumroad.com/l/hsk4-chinese-vocabulary-standard',
-    image: hsk4Img,
-    tag: 'Intermediate',
-    variants: [
-      { id: 'standard', name: 'Standard Pack', price: '11.99', link: 'https://cililearnchinese.gumroad.com/l/hsk4-chinese-vocabulary-standard', image: hsk4Img, preview: hsk4Preview },
-      { id: 'extended', name: 'Extended Pack', price: '16.99', link: 'https://cililearnchinese.gumroad.com/l/hsk4-chinese-vocabulary-extended', image: hsk4ExtendedImg, preview: hsk4ExtendedPreview }
-    ]
-  },
-  {
-    id: 'hsk3',
-    name: 'HSK 3 Vocabulary',
-    description: 'Move beyond the basics with 300 pre-intermediate words and 600 context-rich examples.',
-    price: '7.99',
-    link: 'https://cililearnchinese.gumroad.com/l/hsk3-chinese-vocabulary-standard',
-    image: hsk3Img,
-    tag: 'Pre-Intermediate',
-    variants: [
-      { id: 'standard', name: 'Standard Pack', price: '7.99', link: 'https://cililearnchinese.gumroad.com/l/hsk3-chinese-vocabulary-standard', image: hsk3Img, preview: hsk3Preview },
-      { id: 'extended', name: 'Extended Pack', price: '11.99', link: 'https://cililearnchinese.gumroad.com/l/hsk3-chinese-vocabulary-extended', image: hsk3ExtendedImg, preview: hsk3ExtendedPreview }
-    ]
-  },
-  {
-    id: 'hsk2',
-    name: 'HSK 2 Vocabulary',
-    description: 'Expand your vocabulary with 150 beginner words and 300 easy-to-understand sentences.',
-    price: '4.99',
-    link: 'https://cililearnchinese.gumroad.com/l/hsk2-chinese-vocabulary-standard',
-    image: hsk2Img,
-    tag: 'Beginner',
-    variants: [
-      { id: 'standard', name: 'Standard Pack', price: '4.99', link: 'https://cililearnchinese.gumroad.com/l/hsk2-chinese-vocabulary-standard', image: hsk2Img, preview: hsk2Preview },
-      { id: 'extended', name: 'Extended Pack', price: '7.99', link: 'https://cililearnchinese.gumroad.com/l/hsk2-chinese-vocabulary-extended', image: hsk2ExtendedImg, preview: hsk2ExtendedPreview }
-    ]
-  },
-  {
-    id: 'hsk1',
-    name: 'HSK 1 Vocabulary',
-    description: 'Start your journey. Learn the absolute essential 150 words and 300 foundational sentences.',
-    price: '2.99',
-    link: 'https://cililearnchinese.gumroad.com/l/hsk1-chinese-vocabulary-standard',
-    image: hsk1Img,
-    tag: 'Absolute Beginner',
-    variants: [
-      { id: 'standard', name: 'Standard Pack', price: '2.99', link: 'https://cililearnchinese.gumroad.com/l/hsk1-chinese-vocabulary-standard', image: hsk1Img, preview: hsk1Preview },
-      { id: 'extended', name: 'Extended Pack', price: '4.99', link: 'https://cililearnchinese.gumroad.com/l/hsk1-chinese-vocabulary-extended', image: hsk1ExtendedImg, preview: hsk1ExtendedPreview }
-    ]
-  }
-];
-
-type ProductType = Omit<typeof products[0], 'variants'> & {
-  variants?: { id: string, name: string, price: string, link: string, image?: string, preview?: string, originalPrice?: string, description?: string, bundleImages?: string[] }[];
-  originalPrice?: string;
-  preview?: string;
-  bundleImages?: string[];
-  isSentencePack?: boolean;
-};
 
 function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/products/:productId" element={<ProductPage />} />
+    </Routes>
+  );
+}
+
+function HomePage() {
+  const navigate = useNavigate();
+  const location = useLocation();
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [selectedProduct, setSelectedProduct] = useState<ProductType | null>(null);
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [selectedVariantIndex, setSelectedVariantIndex] = useState(0);
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
   const [showPrivacy, setShowPrivacy] = useState(false);
@@ -346,7 +35,7 @@ function App() {
   const [activeCategory, setActiveCategory] = useState<'all' | 'bundles' | 'hsk-levels'>('all');
   const [isLoading, setIsLoading] = useState(true);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [showComingSoon, setShowComingSoon] = useState(false);
+  const [showComingSoon] = useState(false);
 
   const faqs = [
     {
@@ -364,6 +53,22 @@ function App() {
     {
       question: "How do I receive my download?",
       answer: "After a secure checkout via Gumroad, you'll receive an instant download link on the confirmation page. You'll also get an email with a permanent link to your library."
+    },
+    {
+      question: "What HSK levels do you cover?",
+      answer: "We cover all six HSK levels (HSK 1 through HSK 6), totaling over 5,000 vocabulary words. Each level is available individually or as value bundles (HSK 1–3, HSK 4–6, and the complete HSK 1–6 pack)."
+    },
+    {
+      question: "How many words and sentences are included in each HSK level?",
+      answer: "HSK 1: 150 words (300–600 sentences). HSK 2: 150 words (300–600 sentences). HSK 3: 300 words (600–1,200 sentences). HSK 4: 600 words (1,200–2,400 sentences). HSK 5: 1,300 words (2,600–5,200 sentences). HSK 6: 2,500 words (5,000–10,000 sentences). The range depends on whether you choose Standard (2 sentences per word) or Extended (4 sentences per word)."
+    },
+    {
+      question: "Can I use these with Anki or other flashcard apps?",
+      answer: "Yes. Every pack ships with a tab-separated TSV file alongside the PDF — it imports directly into Anki, Quizlet, Mochi, RemNote, Pleco, and any flashcard app that accepts TSV/CSV. A structured JSON is also included for developers and custom workflows."
+    },
+    {
+      question: "Are the Chinese characters simplified or traditional?",
+      answer: "All CILI materials use simplified Chinese characters, which is the standard for HSK exams and is used in mainland China. Each word includes Pinyin romanization and English translations for easy learning."
     }
   ];
 
@@ -377,12 +82,17 @@ function App() {
   }, []);
 
   useEffect(() => {
-    // Simulate initial loading phase
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 1500);
-    return () => clearTimeout(timer);
+    setIsLoading(false);
   }, []);
+
+  useEffect(() => {
+    if (isLoading) return;
+    if (!location.hash) return;
+    const id = location.hash.slice(1);
+    requestAnimationFrame(() => {
+      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  }, [isLoading, location.hash, location.key]);
 
   useEffect(() => {
     // Lock scroll when mobile menu is open
@@ -617,7 +327,7 @@ function App() {
                   <Zap size={24} color="var(--primary)" />
                 </div>
                 <h4>Instant Download</h4>
-                <p>Get immediate access to beautifully formatted, high-resolution PDF workbooks that look great on any device.</p>
+                <p>Get immediate access to PDF workbooks plus tab-separated TSV and JSON files — print, study, or load straight into Anki and any flashcard app.</p>
               </div>
               <div className="feature-item">
                 <div className="feature-icon-wrapper">
@@ -732,10 +442,7 @@ function App() {
                         <div
                           key={product.id}
                           className={`product-card bundle-card ${product.featured ? 'featured' : ''}`}
-                          onClick={() => {
-                            setSelectedProduct(product as ProductType);
-                            setSelectedVariantIndex(0);
-                          }}
+                          onClick={() => navigate(`/products/${product.id}`)}
                           style={{ cursor: 'pointer' }}
                         >
                           <div className="product-image-wrapper">
@@ -759,7 +466,7 @@ function App() {
                                     >
                                       <SkeletonImage
                                         src={imgSrc}
-                                        alt=""
+                                        alt={`${product.name} - HSK level ${idx + 1} cover`}
                                         style={{ borderRadius: 'var(--radius-sm)', boxShadow: '-6px 6px 15px rgba(0, 0, 0, 0.5)' }}
                                       />
                                     </div>
@@ -804,14 +511,13 @@ function App() {
                                     if (product.variants && product.variants.length > 0) {
                                       e.preventDefault();
                                       e.stopPropagation();
-                                      setSelectedProduct(product as ProductType);
-                                      setSelectedVariantIndex(0);
+                                      navigate(`/products/${product.id}`);
                                     } else {
                                       e.stopPropagation();
                                     }
                                   }}
                                 >
-                                  {product.variants && product.variants.length > 0 ? 'Select Options' : 'Buy Now'}
+                                  {product.variants && product.variants.length > 0 ? 'View Details' : 'Buy Now'}
                                 </a>
                               </div>
                             </div>
@@ -842,10 +548,7 @@ function App() {
                         <div
                           key={product.id}
                           className={`product-card ${product.featured ? 'featured' : ''}`}
-                          onClick={() => {
-                            setSelectedProduct(product as ProductType);
-                            setSelectedVariantIndex(0);
-                          }}
+                          onClick={() => navigate(`/products/${product.id}`)}
                           style={{ cursor: 'pointer' }}
                         >
                           <div className="product-image-wrapper">
@@ -885,14 +588,13 @@ function App() {
                                     if (product.variants && product.variants.length > 0) {
                                       e.preventDefault();
                                       e.stopPropagation();
-                                      setSelectedProduct(product as ProductType);
-                                      setSelectedVariantIndex(0);
+                                      navigate(`/products/${product.id}`);
                                     } else {
                                       e.stopPropagation();
                                     }
                                   }}
                                 >
-                                  {product.variants && product.variants.length > 0 ? 'Select Options' : 'Buy Now'}
+                                  {product.variants && product.variants.length > 0 ? 'View Details' : 'Buy Now'}
                                 </a>
                               </div>
                             </div>
@@ -930,10 +632,7 @@ function App() {
                       <div
                         key={product.id}
                         className={`sentence-card-v2 ${product.featured ? 'featured' : ''} ${isFlagship ? 'flagship' : ''}`}
-                        onClick={() => {
-                          setShowComingSoon(true);
-                          setTimeout(() => setShowComingSoon(false), 2500);
-                        }}
+                        onClick={() => navigate(`/products/${product.id}`)}
                         style={{ cursor: 'pointer' }}
                       >
                         <div className="sentence-info">
@@ -1042,6 +741,68 @@ function App() {
           </div>
         </section>
 
+        <section className="blitz-section">
+          <div className="container">
+            <div className="blitz-grid">
+              <div className="blitz-content">
+                <div className="blitz-badge">
+                  <Zap size={14} fill="currentColor" />
+                  Free to Play
+                </div>
+                <h2>CILI Blitz<br /><span>Learn Chinese by Playing.</span></h2>
+                <p>
+                  Our gamified web app turns HSK vocabulary into an interactive experience. Battle friends in real-time, climb the leaderboard, and build daily streaks — all while mastering Mandarin.
+                </p>
+                <div className="blitz-features">
+                  <div className="blitz-feature">
+                    <Zap size={18} color="#f59e0b" />
+                    <span>Interactive quizzes across all HSK levels</span>
+                  </div>
+                  <div className="blitz-feature">
+                    <Infinity size={18} color="#8B5CF6" />
+                    <span>Real-time multiplayer battles</span>
+                  </div>
+                  <div className="blitz-feature">
+                    <ShieldCheck size={18} color="#10B981" />
+                    <span>XP, streaks, hearts & leaderboards</span>
+                  </div>
+                </div>
+                <a
+                  href="https://cililearnchinese.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-blitz"
+                  style={{ textDecoration: 'none' }}
+                >
+                  <Zap size={18} />
+                  Play CILI Blitz
+                </a>
+              </div>
+              <div className="blitz-visual">
+                <div className="blitz-glow"></div>
+                <div className="blitz-card">
+                  <div className="blitz-card-header">
+                    <span className="blitz-card-dot"></span>
+                    <span className="blitz-card-dot"></span>
+                    <span className="blitz-card-dot"></span>
+                  </div>
+                  <div className="blitz-card-body">
+                    <div className="blitz-question-label">What does this mean?</div>
+                    <div className="blitz-character">我爱你</div>
+                    <div className="blitz-pinyin">wǒ ài nǐ</div>
+                    <div className="blitz-options">
+                      <div className="blitz-option">I miss you</div>
+                      <div className="blitz-option correct">I love you</div>
+                      <div className="blitz-option">I need you</div>
+                    </div>
+                    <div className="blitz-xp">+15 XP</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section id="faq" className="faq-section">
           <div className="container">
             <div className="section-title">
@@ -1098,7 +859,7 @@ function App() {
                         >
                           <SkeletonImage
                             src={imgSrc}
-                            alt=""
+                            alt={`${selectedProduct.name} - variant ${idx + 1} cover`}
                             style={{ borderRadius: 'var(--radius-sm)', boxShadow: '-6px 6px 15px rgba(0, 0, 0, 0.5)' }}
                           />
                         </div>
@@ -1125,7 +886,7 @@ function App() {
                         >
                           <SkeletonImage
                             src={imgSrc}
-                            alt=""
+                            alt={`${selectedProduct.name} - HSK level ${idx + 1} cover`}
                             style={{ borderRadius: 'var(--radius-sm)', boxShadow: '-6px 6px 15px rgba(0, 0, 0, 0.5)' }}
                           />
                         </div>
@@ -1187,7 +948,11 @@ function App() {
                 <div className="modal-features">
                   <div className="modal-feature">
                     <CheckCircle size={18} color="var(--primary)" />
-                    <span>Instant Digital Download (PDF)</span>
+                    <span>Instant Download — PDF + TSV + JSON</span>
+                  </div>
+                  <div className="modal-feature">
+                    <CheckCircle size={18} color="var(--primary)" />
+                    <span>Imports into Anki, Quizlet & flashcard apps</span>
                   </div>
                   <div className="modal-feature">
                     <CheckCircle size={18} color="var(--primary)" />

@@ -10,6 +10,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "gen-packs": "node scripts/generate-sentence-packs.mjs",
+    "gen-hsk-packs": "node scripts/generate-hsk-packs.mjs",
     "gen-packs:test": "node --test \"scripts/sentence-pack/__tests__/*.test.mjs\""
   },
   "dependencies": {
