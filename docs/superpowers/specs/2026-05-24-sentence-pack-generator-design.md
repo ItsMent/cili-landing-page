@@ -71,18 +71,21 @@ Each pack produces three files. Buyers receive all three from a single Gumroad p
 - First page: title, subtitle ("N foundational/practice/etc. Chinese sentences"), CILI branding, Tatoeba attribution
 - Last page: colophon with full CC-BY 2.0 FR attribution and link back to the CILI shop
 
-### CSV (delivered as TSV)
+### TSV (universal flashcard format)
 
-- Purpose: direct import into Anki via File → Import
-- Encoding: UTF-8 with BOM (Anki on Windows needs BOM to detect UTF-8 reliably)
+- Purpose: direct import into **any flashcard app that accepts TSV/CSV** — Anki, Quizlet, Mochi, RemNote, Pleco, Brainscape, Memrise, and similar. TSV is the lowest-common-denominator format across the category.
+- Encoding: UTF-8 with BOM (Anki on Windows needs BOM to detect UTF-8 reliably; other apps tolerate BOM)
 - Delimiter: tab — full-width Chinese commas would create ambiguous quoting if we used real CSV
-- Filename: `.tsv` extension (unambiguous — `.csv` confuses Excel into trying comma parsing)
-- No header row (Anki's default import flow doesn't expect one)
+- Filename: `.tsv` extension (unambiguous — `.csv` confuses Excel and some apps into trying comma parsing)
+- No header row (Anki's default import flow doesn't expect one; most apps treat the first row as data unless told otherwise)
 - Columns, in order:
   1. Simplified Chinese (from source `simplified`)
   2. Pinyin (from source `pinyin`)
   3. English (from source `english`)
-- Sister file `README.txt` shipped alongside, explaining the column order and a three-step Anki import recipe
+- Sister file `README.txt` shipped alongside, covering:
+  - A three-step Anki import recipe (most popular target)
+  - One-line notes for Quizlet, Mochi, RemNote, Pleco
+  - A workaround for two-field-only apps: combine columns 2+3 in a spreadsheet so the Back side shows `pinyin — english`
 
 ### JSON
 
@@ -167,7 +170,7 @@ This is a small follow-on change, not the generator's job.
 ## Out of scope
 
 - Cover image design (use existing `src/assets/sentence-pack.png` for v1; commission a Master-specific cover later)
-- `.apkg` Anki deck files (CSV covers Anki adequately; revisit if buyers ask)
+- `.apkg` Anki deck files and other app-specific deck formats (TSV covers Anki and the rest adequately; revisit if a meaningful share of buyers ask for a pre-built deck for a specific app)
 - Audio bundles (you have `generated_audio/HSK*` in `CILI - Datas` but pairing audio to sentences is its own project)
 - Discount codes, affiliate setup, email automations on Gumroad
 - The site's `PreOrder`→`InStock` flip is a follow-on task, not part of the generator
@@ -178,6 +181,6 @@ This is a small follow-on change, not the generator's job.
 2. For any given pack, the three formats contain the **same sentences in the same order** — PDF row N corresponds to TSV row N corresponds to JSON index N−1.
 3. Each pack is a strict subset of every larger pack (`starter` ⊂ `practice` ⊂ `immersion` ⊂ `advanced` ⊂ `pro` ⊂ `master`).
 4. The shortest sentence in every pack has ≥5 non-ASCII characters; no sentence contains any ASCII character in the Chinese field; no row has an empty Chinese field.
-5. TSV opens cleanly in Anki desktop (File → Import) and produces N cards with three fields each.
+5. TSV opens cleanly in Anki desktop (the strictest popular target) and produces N cards with three fields each. Spot-check Quizlet's CSV/TSV import path as a second app to confirm the format generalizes.
 6. JSON parses with `JSON.parse` and contains exactly N objects with keys `chinese`, `pinyin`, `english`.
 7. PDF renders Chinese characters correctly (no tofu boxes), paginates without orphans, and contains the Tatoeba attribution on the colophon page.
