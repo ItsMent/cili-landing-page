@@ -10,7 +10,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "gen-packs": "node scripts/generate-sentence-packs.mjs",
-    "gen-packs:test": "node --test scripts/sentence-pack/__tests__"
+    "gen-packs:test": "node --test \"scripts/sentence-pack/__tests__/*.test.mjs\""
   },
   "dependencies": {
     "lucide-react": "^0.577.0",
