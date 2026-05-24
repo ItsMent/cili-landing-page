@@ -72,7 +72,7 @@ export const products: Product[] = [
     isBundle: true,
     tag: 'BEST VALUE \u2022 SAVE 40%',
     seoTitle: 'HSK 1-6 Complete Vocabulary Bundle - 5,000 Words & 20,000 Sentences PDF',
-    seoDescription: 'Get all 5,000 HSK words (levels 1-6) with up to 20,000 example sentences, Pinyin, and translations. Standard and Extended options available. Includes PDF, TSV, and JSON — imports into Anki, Quizlet, and any flashcard app.',
+    seoDescription: 'Get all 5,000 HSK words (levels 1-6) with up to 20,000 example sentences, Pinyin, and translations. Standard and Extended options available. Instant PDF download — bonus TSV and JSON included for Anki and any flashcard app.',
     variants: [
       {
         id: 'standard',
@@ -111,7 +111,7 @@ export const products: Product[] = [
     isBundle: true,
     tag: 'Starter Bundle \u2022 SAVE 37%',
     seoTitle: 'HSK 1-3 Junior Vocabulary Bundle - 600 Words & Sentences PDF',
-    seoDescription: 'Master the fundamentals with all HSK 1, 2, and 3 vocabulary (600 words) with example sentences, Pinyin, and English translations. Includes PDF, TSV, and JSON — imports into Anki, Quizlet, and any flashcard app.',
+    seoDescription: 'Master the fundamentals with all HSK 1, 2, and 3 vocabulary (600 words) with example sentences, Pinyin, and English translations. Instant PDF download — bonus TSV and JSON included for Anki and any flashcard app.',
     variants: [
       {
         id: 'standard',
@@ -150,7 +150,7 @@ export const products: Product[] = [
     isBundle: true,
     tag: 'Mastery Bundle \u2022 SAVE 41%',
     seoTitle: 'HSK 4-6 Mastery Vocabulary Bundle - 4,400 Advanced Words PDF',
-    seoDescription: 'Reach advanced Chinese proficiency with HSK 4, 5, and 6 vocabulary (4,400 words) with context-rich example sentences. Includes PDF, TSV, and JSON — imports into Anki, Quizlet, and any flashcard app.',
+    seoDescription: 'Reach advanced Chinese proficiency with HSK 4, 5, and 6 vocabulary (4,400 words) with context-rich example sentences. Instant PDF download — bonus TSV and JSON included for Anki and any flashcard app.',
     variants: [
       {
         id: 'standard',
@@ -198,7 +198,7 @@ export const products: Product[] = [
     tag: 'CORE PRACTICE \u2022 3K',
     isSentencePack: true,
     seoTitle: 'Chinese Practice Sentence Pack - 3,000 Daily Usage Sentences PDF',
-    seoDescription: '3,000 practical Chinese sentences to expand your vocabulary and master daily usage patterns. Includes PDF, TSV, and JSON — imports into Anki, Quizlet, and any flashcard app.'
+    seoDescription: '3,000 practical Chinese sentences to expand your vocabulary and master daily usage patterns. Instant PDF download — bonus TSV and JSON included for Anki and any flashcard app.'
   },
   {
     id: 'immersion-sentences',
@@ -211,7 +211,7 @@ export const products: Product[] = [
     isSentencePack: true,
     featured: true,
     seoTitle: 'Chinese Immersion Sentence Pack - 5,000 Contextual Sentences PDF',
-    seoDescription: '5,000 immersive Chinese sentences designed for rapid comprehension and natural context learning. Most popular sentence pack. Includes PDF, TSV, and JSON — imports into Anki, Quizlet, and any flashcard app.'
+    seoDescription: '5,000 immersive Chinese sentences designed for rapid comprehension and natural context learning. Most popular sentence pack. Instant PDF download — bonus TSV and JSON included for Anki and any flashcard app.'
   },
   {
     id: 'advanced-sentences',
@@ -223,7 +223,7 @@ export const products: Product[] = [
     tag: 'FLUENCY BUILDER \u2022 10K',
     isSentencePack: true,
     seoTitle: 'Chinese Advanced Sentence Pack - 10,000 Complex Grammar Sentences PDF',
-    seoDescription: '10,000 comprehensive Chinese sentences to master complex grammar and sophisticated word usage. Includes PDF, TSV, and JSON — imports into Anki, Quizlet, and any flashcard app.'
+    seoDescription: '10,000 comprehensive Chinese sentences to master complex grammar and sophisticated word usage. Instant PDF download — bonus TSV and JSON included for Anki and any flashcard app.'
   },
   {
     id: 'pro-sentences',
@@ -235,7 +235,7 @@ export const products: Product[] = [
     tag: 'DEEP IMMERSION \u2022 20K',
     isSentencePack: true,
     seoTitle: 'Chinese Pro Mastery Sentence Pack - 20,000 Extensive Sentences PDF',
-    seoDescription: '20,000 extensive Chinese sentences for deep linguistic immersion. A massive expansion for serious Mandarin learners. Includes PDF, TSV, and JSON — imports into Anki, Quizlet, and any flashcard app.'
+    seoDescription: '20,000 extensive Chinese sentences for deep linguistic immersion. A massive expansion for serious Mandarin learners. Instant PDF download — bonus TSV and JSON included for Anki and any flashcard app.'
   },
   {
     id: 'master-sentences',
@@ -248,7 +248,7 @@ export const products: Product[] = [
     isSentencePack: true,
     featured: true,
     seoTitle: 'Chinese Master Sentence Pack - 30,000 Ultimate Sentences PDF',
-    seoDescription: '30,000 ultimate Chinese sentences. The complete linguistic database for achieving native-level fluency. Includes PDF, TSV, and JSON — imports into Anki, Quizlet, and any flashcard app.'
+    seoDescription: '30,000 ultimate Chinese sentences. The complete linguistic database for achieving native-level fluency. Instant PDF download — bonus TSV and JSON included for Anki and any flashcard app.'
   },
   {
     id: 'hsk6',
@@ -259,7 +259,7 @@ export const products: Product[] = [
     image: hsk6Img,
     tag: 'Advanced',
     seoTitle: 'HSK 6 Vocabulary PDF - 2,500 Advanced Chinese Words & Sentences',
-    seoDescription: 'Master advanced Chinese with 2,500 HSK 6 core words and up to 10,000 example sentences. Standard and Extended options. Includes PDF, TSV, and JSON — imports into Anki, Quizlet, and any flashcard app.',
+    seoDescription: 'Master advanced Chinese with 2,500 HSK 6 core words and up to 10,000 example sentences. Standard and Extended options. Instant PDF download — bonus TSV and JSON included for Anki and any flashcard app.',
     variants: [
       { id: 'standard', name: 'Standard Pack', price: '21.99', link: 'https://cililearnchinese.gumroad.com/l/hsk6-chinese-vocabulary-standard', image: hsk6Img, preview: hsk6Preview },
       { id: 'extended', name: 'Extended Pack', price: '26.99', link: 'https://cililearnchinese.gumroad.com/l/hsk6-chinese-vocabulary-extended', image: hsk6ExtendedImg, preview: hsk6ExtendedPreview }
@@ -274,7 +274,7 @@ export const products: Product[] = [
     image: hsk5Img,
     tag: 'Upper Intermediate',
     seoTitle: 'HSK 5 Vocabulary PDF - 1,300 Upper-Intermediate Chinese Words',
-    seoDescription: 'Bridge the gap to Chinese fluency with 1,300 HSK 5 upper-intermediate words and up to 5,200 example sentences. Includes PDF, TSV, and JSON — imports into Anki, Quizlet, and any flashcard app.',
+    seoDescription: 'Bridge the gap to Chinese fluency with 1,300 HSK 5 upper-intermediate words and up to 5,200 example sentences. Instant PDF download — bonus TSV and JSON included for Anki and any flashcard app.',
     variants: [
       { id: 'standard', name: 'Standard Pack', price: '16.99', link: 'https://cililearnchinese.gumroad.com/l/hsk5-chinese-vocabulary-standard', image: hsk5Img, preview: hsk5Preview },
       { id: 'extended', name: 'Extended Pack', price: '21.99', link: 'https://cililearnchinese.gumroad.com/l/hsk5-chinese-vocabulary-extended', image: hsk5ExtendedImg, preview: hsk5ExtendedPreview }
@@ -289,7 +289,7 @@ export const products: Product[] = [
     image: hsk4Img,
     tag: 'Intermediate',
     seoTitle: 'HSK 4 Vocabulary PDF - 600 Intermediate Chinese Words & Sentences',
-    seoDescription: 'Solidify your Chinese foundation with 600 HSK 4 intermediate words and up to 2,400 practical example sentences. Includes PDF, TSV, and JSON — imports into Anki, Quizlet, and any flashcard app.',
+    seoDescription: 'Solidify your Chinese foundation with 600 HSK 4 intermediate words and up to 2,400 practical example sentences. Instant PDF download — bonus TSV and JSON included for Anki and any flashcard app.',
     variants: [
       { id: 'standard', name: 'Standard Pack', price: '11.99', link: 'https://cililearnchinese.gumroad.com/l/hsk4-chinese-vocabulary-standard', image: hsk4Img, preview: hsk4Preview },
       { id: 'extended', name: 'Extended Pack', price: '16.99', link: 'https://cililearnchinese.gumroad.com/l/hsk4-chinese-vocabulary-extended', image: hsk4ExtendedImg, preview: hsk4ExtendedPreview }
@@ -304,7 +304,7 @@ export const products: Product[] = [
     image: hsk3Img,
     tag: 'Pre-Intermediate',
     seoTitle: 'HSK 3 Vocabulary PDF - 300 Pre-Intermediate Chinese Words',
-    seoDescription: 'Move beyond the basics with 300 HSK 3 pre-intermediate words and up to 1,200 context-rich example sentences. Includes PDF, TSV, and JSON — imports into Anki, Quizlet, and any flashcard app.',
+    seoDescription: 'Move beyond the basics with 300 HSK 3 pre-intermediate words and up to 1,200 context-rich example sentences. Instant PDF download — bonus TSV and JSON included for Anki and any flashcard app.',
     variants: [
       { id: 'standard', name: 'Standard Pack', price: '7.99', link: 'https://cililearnchinese.gumroad.com/l/hsk3-chinese-vocabulary-standard', image: hsk3Img, preview: hsk3Preview },
       { id: 'extended', name: 'Extended Pack', price: '11.99', link: 'https://cililearnchinese.gumroad.com/l/hsk3-chinese-vocabulary-extended', image: hsk3ExtendedImg, preview: hsk3ExtendedPreview }
@@ -319,7 +319,7 @@ export const products: Product[] = [
     image: hsk2Img,
     tag: 'Beginner',
     seoTitle: 'HSK 2 Vocabulary PDF - 150 Beginner Chinese Words & Sentences',
-    seoDescription: 'Expand your Chinese vocabulary with 150 HSK 2 beginner words and up to 600 easy-to-understand example sentences. Includes PDF, TSV, and JSON — imports into Anki, Quizlet, and any flashcard app.',
+    seoDescription: 'Expand your Chinese vocabulary with 150 HSK 2 beginner words and up to 600 easy-to-understand example sentences. Instant PDF download — bonus TSV and JSON included for Anki and any flashcard app.',
     variants: [
       { id: 'standard', name: 'Standard Pack', price: '4.99', link: 'https://cililearnchinese.gumroad.com/l/hsk2-chinese-vocabulary-standard', image: hsk2Img, preview: hsk2Preview },
       { id: 'extended', name: 'Extended Pack', price: '7.99', link: 'https://cililearnchinese.gumroad.com/l/hsk2-chinese-vocabulary-extended', image: hsk2ExtendedImg, preview: hsk2ExtendedPreview }
@@ -334,7 +334,7 @@ export const products: Product[] = [
     image: hsk1Img,
     tag: 'Absolute Beginner',
     seoTitle: 'HSK 1 Vocabulary PDF - 150 Essential Chinese Words for Beginners',
-    seoDescription: 'Start your Chinese journey with 150 essential HSK 1 words and up to 600 foundational example sentences with Pinyin. Includes PDF, TSV, and JSON — imports into Anki, Quizlet, and any flashcard app.',
+    seoDescription: 'Start your Chinese journey with 150 essential HSK 1 words and up to 600 foundational example sentences with Pinyin. Instant PDF download — bonus TSV and JSON included for Anki and any flashcard app.',
     variants: [
       { id: 'standard', name: 'Standard Pack', price: '2.99', link: 'https://cililearnchinese.gumroad.com/l/hsk1-chinese-vocabulary-standard', image: hsk1Img, preview: hsk1Preview },
       { id: 'extended', name: 'Extended Pack', price: '4.99', link: 'https://cililearnchinese.gumroad.com/l/hsk1-chinese-vocabulary-extended', image: hsk1ExtendedImg, preview: hsk1ExtendedPreview }

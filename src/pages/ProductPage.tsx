@@ -187,11 +187,7 @@ export default function ProductPage() {
               <div className="modal-features" style={{ marginBottom: '32px' }}>
                 <div className="modal-feature">
                   <CheckCircle size={18} color="var(--primary)" />
-                  <span>Instant Download — PDF + TSV + JSON</span>
-                </div>
-                <div className="modal-feature">
-                  <CheckCircle size={18} color="var(--primary)" />
-                  <span>Imports into Anki, Quizlet & flashcard apps</span>
+                  <span>Instant Digital PDF Download</span>
                 </div>
                 <div className="modal-feature">
                   <CheckCircle size={18} color="var(--primary)" />
@@ -200,6 +196,10 @@ export default function ProductPage() {
                 <div className="modal-feature">
                   <CheckCircle size={18} color="var(--primary)" />
                   <span>Professional English Translations</span>
+                </div>
+                <div className="modal-feature">
+                  <CheckCircle size={18} color="var(--primary)" />
+                  <span>Bonus: TSV + JSON for Anki & flashcard apps</span>
                 </div>
                 <div className="modal-feature" style={{ marginTop: '8px', paddingTop: '16px', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
                   <ShieldCheck size={18} color="#10B981" />

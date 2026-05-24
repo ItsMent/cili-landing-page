@@ -327,7 +327,7 @@ function HomePage() {
                   <Zap size={24} color="var(--primary)" />
                 </div>
                 <h4>Instant Download</h4>
-                <p>Get immediate access to PDF workbooks plus tab-separated TSV and JSON files — print, study, or load straight into Anki and any flashcard app.</p>
+                <p>Get immediate access to beautifully formatted, high-resolution PDF workbooks that look great on any device. TSV and JSON files included as a bonus for Anki and flashcard apps.</p>
               </div>
               <div className="feature-item">
                 <div className="feature-icon-wrapper">
@@ -948,11 +948,7 @@ function HomePage() {
                 <div className="modal-features">
                   <div className="modal-feature">
                     <CheckCircle size={18} color="var(--primary)" />
-                    <span>Instant Download — PDF + TSV + JSON</span>
-                  </div>
-                  <div className="modal-feature">
-                    <CheckCircle size={18} color="var(--primary)" />
-                    <span>Imports into Anki, Quizlet & flashcard apps</span>
+                    <span>Instant Digital PDF Download</span>
                   </div>
                   <div className="modal-feature">
                     <CheckCircle size={18} color="var(--primary)" />
@@ -961,6 +957,10 @@ function HomePage() {
                   <div className="modal-feature">
                     <CheckCircle size={18} color="var(--primary)" />
                     <span>Professional English Translations</span>
+                  </div>
+                  <div className="modal-feature">
+                    <CheckCircle size={18} color="var(--primary)" />
+                    <span>Bonus: TSV + JSON for Anki & flashcard apps</span>
                   </div>
                   <div className="modal-feature" style={{ marginTop: '8px', paddingTop: '16px', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
                     <ShieldCheck size={18} color="#10B981" />
