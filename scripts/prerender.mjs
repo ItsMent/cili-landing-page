@@ -1,3 +1,12 @@
+// Vercel's build container lacks the system libs Chromium needs
+// (libnspr4.so etc). Skip prerender there — the SPA still works and
+// react-helmet-async handles per-page SEO at runtime. Run prerender
+// locally before publishing if you want static HTML for crawlers.
+if (process.env.VERCEL || process.env.CI) {
+  console.log('Skipping prerender (VERCEL/CI environment — Puppeteer unavailable).');
+  process.exit(0);
+}
+
 import puppeteer from 'puppeteer';
 import { createServer } from 'http';
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'fs';
