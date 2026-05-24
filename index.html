@@ -4,40 +4,64 @@
 <head>
   <meta charset="UTF-8" />
   <link rel="icon" type="image/png" href="/cili-favicon.png" />
+  <link rel="apple-touch-icon" href="/cili-favicon.png" />
+  <link rel="manifest" href="/manifest.json" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0A0F1C" />
   <meta name="description"
-    content="Master Chinese with CILI - Learn Chinese. Premium HSK 1-6 vocabulary PDFs with example sentences, Pinyin, and translations. Instant digital download." />
-  <meta name="keywords" content="learn Chinese, HSK vocabulary, Chinese PDF, HSK 1, HSK 2, HSK 3, HSK 4, HSK 5, HSK 6, Chinese study materials, Mandarin vocabulary, Chinese example sentences, Pinyin" />
+    content="Master Chinese with premium HSK 1-6 vocabulary PDFs. 5,000+ words with example sentences, Pinyin, and translations. Instant digital download. Trusted by learners worldwide." />
+  <meta name="keywords" content="learn Chinese, HSK vocabulary, Chinese PDF, HSK 1, HSK 2, HSK 3, HSK 4, HSK 5, HSK 6, Chinese study materials, Mandarin vocabulary, Chinese example sentences, Pinyin, HSK exam prep, Chinese flashcards, Mandarin PDF, learn Mandarin, Chinese workbook" />
   <meta name="author" content="CILI - Learn Chinese" />
-  <meta name="robots" content="index, follow" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
   <link rel="canonical" href="https://shop.cililearnchinese.com/" />
+
+  <!-- Google Search Console verification — replace YOUR_CODE with actual verification code -->
+  <meta name="google-site-verification" content="YOUR_CODE" />
 
   <!-- Preconnect to Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@400;600;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
     rel="stylesheet">
 
   <!-- Gumroad Overlay Checkout Script -->
   <script src="https://gumroad.com/js/gumroad.js" defer></script>
 
   <!-- Social Meta Tags for TikTok / Facebook / Twitter -->
-  <meta property="og:title" content="CILI - Learn Chinese | HSK 1-6 Vocabulary & Sentence PDFs" />
+  <meta property="og:title" content="HSK 1-6 Vocabulary & Example Sentence PDFs | CILI Learn Chinese" />
   <meta property="og:description"
-    content="Accelerate your Chinese learning curve with our beautifully formatted HSK 1-6 vocabulary and example sentence PDFs. Instant download." />
+    content="Accelerate your Chinese learning with beautifully formatted HSK 1-6 vocabulary and example sentence PDFs. 5,000+ words, instant download." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://shop.cililearnchinese.com/" />
   <meta property="og:image" content="https://shop.cililearnchinese.com/cili-favicon.png" />
   <meta property="og:site_name" content="CILI - Learn Chinese" />
   <meta property="og:locale" content="en_US" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="CILI - Learn Chinese | HSK 1-6 Vocabulary & Sentence PDFs" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="HSK 1-6 Vocabulary & Example Sentence PDFs | CILI Learn Chinese" />
   <meta name="twitter:description"
-    content="Accelerate your Chinese learning curve with our beautifully formatted HSK 1-6 vocabulary and example sentence PDFs. Instant download." />
+    content="Accelerate your Chinese learning with beautifully formatted HSK 1-6 vocabulary and example sentence PDFs. 5,000+ words, instant download." />
   <meta name="twitter:image" content="https://shop.cililearnchinese.com/cili-favicon.png" />
 
-  <!-- Structured Data: Website -->
+  <!-- Structured Data: Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "CILI - Learn Chinese",
+    "url": "https://shop.cililearnchinese.com/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://shop.cililearnchinese.com/cili-favicon.png"
+    },
+    "sameAs": [
+      "https://www.tiktok.com/@cililingo",
+      "https://cililearnchinese.gumroad.com"
+    ]
+  }
+  </script>
+
+  <!-- Structured Data: Website with SearchAction -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -56,25 +80,303 @@
   }
   </script>
 
-  <!-- Structured Data: Products (HSK Bundle) -->
+  <!-- Structured Data: All Products (ItemList) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Product",
-    "name": "HSK 1-6 Complete Vocabulary & Sentence Pack",
-    "description": "The ultimate bundle. Get all 5,000 HSK words precisely mapped to beautifully formatted example sentences with Pinyin and translations.",
-    "brand": {
-      "@type": "Brand",
-      "name": "CILI - Learn Chinese"
-    },
-    "offers": {
-      "@type": "Offer",
-      "price": "39.99",
-      "priceCurrency": "USD",
-      "availability": "https://schema.org/InStock",
-      "url": "https://cililearnchinese.gumroad.com/l/hsk1-6-complete-chinese-vocabulary-bundle-standard"
-    },
-    "category": "Educational Materials"
+    "@type": "ItemList",
+    "name": "CILI Chinese Learning Products",
+    "numberOfItems": 16,
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@type": "Product",
+          "name": "HSK 1-6 Complete Vocabulary & Sentence Pack",
+          "description": "The ultimate bundle. Get all 5,000 HSK words precisely mapped to beautifully formatted example sentences with Pinyin and translations.",
+          "brand": { "@type": "Brand", "name": "CILI - Learn Chinese" },
+          "category": "Educational Materials",
+          "offers": {
+            "@type": "AggregateOffer",
+            "lowPrice": "39.99",
+            "highPrice": "54.99",
+            "priceCurrency": "USD",
+            "offerCount": 2,
+            "availability": "https://schema.org/InStock",
+            "url": "https://cililearnchinese.gumroad.com/l/hsk1-6-complete-chinese-vocabulary-bundle-standard"
+          }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "item": {
+          "@type": "Product",
+          "name": "HSK 1-3 Junior Vocabulary Pack",
+          "description": "Master the fundamentals. Get all HSK 1, 2, and 3 words precisely mapped to example sentences.",
+          "brand": { "@type": "Brand", "name": "CILI - Learn Chinese" },
+          "category": "Educational Materials",
+          "offers": {
+            "@type": "AggregateOffer",
+            "lowPrice": "9.99",
+            "highPrice": "14.99",
+            "priceCurrency": "USD",
+            "offerCount": 2,
+            "availability": "https://schema.org/InStock",
+            "url": "https://cililearnchinese.gumroad.com/l/hsk1-3-chinese-vocabulary-bundle-standard"
+          }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@type": "Product",
+          "name": "HSK 4-6 Mastery Vocabulary Pack",
+          "description": "Reach advanced proficiency. Complete collection of HSK 4, 5, and 6 words with context-rich sentences.",
+          "brand": { "@type": "Brand", "name": "CILI - Learn Chinese" },
+          "category": "Educational Materials",
+          "offers": {
+            "@type": "AggregateOffer",
+            "lowPrice": "29.99",
+            "highPrice": "39.99",
+            "priceCurrency": "USD",
+            "offerCount": 2,
+            "availability": "https://schema.org/InStock",
+            "url": "https://cililearnchinese.gumroad.com/l/hsk4-6-chinese-vocabulary-bundle-standard"
+          }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "item": {
+          "@type": "Product",
+          "name": "Starter Sentence Pack - 1,000 Sentences",
+          "description": "1,000 foundational sentences. Perfect for building your initial sentence-mining database.",
+          "brand": { "@type": "Brand", "name": "CILI - Learn Chinese" },
+          "category": "Educational Materials",
+          "offers": {
+            "@type": "Offer",
+            "price": "6.99",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock",
+            "url": "https://cililearnchinese.gumroad.com/l/starter-sentences"
+          }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "item": {
+          "@type": "Product",
+          "name": "Practice Sentence Pack - 3,000 Sentences",
+          "description": "3,000 practical sentences. Expand your vocabulary and master daily usage patterns.",
+          "brand": { "@type": "Brand", "name": "CILI - Learn Chinese" },
+          "category": "Educational Materials",
+          "offers": {
+            "@type": "Offer",
+            "price": "14.99",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock",
+            "url": "https://cililearnchinese.gumroad.com/l/practice-sentences"
+          }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 6,
+        "item": {
+          "@type": "Product",
+          "name": "Immersion Sentence Pack - 5,000 Sentences",
+          "description": "5,000 immersive sentences. Designed for rapid comprehension and natural context.",
+          "brand": { "@type": "Brand", "name": "CILI - Learn Chinese" },
+          "category": "Educational Materials",
+          "offers": {
+            "@type": "Offer",
+            "price": "19.99",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock",
+            "url": "https://cililearnchinese.gumroad.com/l/immersion-sentences"
+          }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 7,
+        "item": {
+          "@type": "Product",
+          "name": "Advanced Sentence Pack - 10,000 Sentences",
+          "description": "10,000 comprehensive sentences. Master complex grammar and sophisticated word usage.",
+          "brand": { "@type": "Brand", "name": "CILI - Learn Chinese" },
+          "category": "Educational Materials",
+          "offers": {
+            "@type": "Offer",
+            "price": "39.99",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock",
+            "url": "https://cililearnchinese.gumroad.com/l/advanced-sentences"
+          }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 8,
+        "item": {
+          "@type": "Product",
+          "name": "Pro Mastery Sentence Pack - 20,000 Sentences",
+          "description": "20,000 extensive sentences. A massive expansion for deep linguistic immersion.",
+          "brand": { "@type": "Brand", "name": "CILI - Learn Chinese" },
+          "category": "Educational Materials",
+          "offers": {
+            "@type": "Offer",
+            "price": "79.99",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock",
+            "url": "https://cililearnchinese.gumroad.com/l/pro-sentences"
+          }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 9,
+        "item": {
+          "@type": "Product",
+          "name": "Master Sentence Pack - 30,000 Sentences",
+          "description": "30,000 ultimate sentences. The complete linguistic database for native-level fluency.",
+          "brand": { "@type": "Brand", "name": "CILI - Learn Chinese" },
+          "category": "Educational Materials",
+          "offers": {
+            "@type": "Offer",
+            "price": "89.99",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock",
+            "url": "https://cililearnchinese.gumroad.com/l/master-sentences"
+          }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 10,
+        "item": {
+          "@type": "Product",
+          "name": "HSK 6 Vocabulary PDF - 2,500 Words",
+          "description": "Master advanced Chinese with 2,500 core words accompanied by 5,000 example sentences.",
+          "brand": { "@type": "Brand", "name": "CILI - Learn Chinese" },
+          "category": "Educational Materials",
+          "offers": {
+            "@type": "AggregateOffer",
+            "lowPrice": "21.99",
+            "highPrice": "26.99",
+            "priceCurrency": "USD",
+            "offerCount": 2,
+            "availability": "https://schema.org/InStock",
+            "url": "https://cililearnchinese.gumroad.com/l/hsk6-chinese-vocabulary-standard"
+          }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 11,
+        "item": {
+          "@type": "Product",
+          "name": "HSK 5 Vocabulary PDF - 1,300 Words",
+          "description": "Bridge the gap to fluency with 1,300 essential upper-intermediate words and 2,600 examples.",
+          "brand": { "@type": "Brand", "name": "CILI - Learn Chinese" },
+          "category": "Educational Materials",
+          "offers": {
+            "@type": "AggregateOffer",
+            "lowPrice": "16.99",
+            "highPrice": "21.99",
+            "priceCurrency": "USD",
+            "offerCount": 2,
+            "availability": "https://schema.org/InStock",
+            "url": "https://cililearnchinese.gumroad.com/l/hsk5-chinese-vocabulary-standard"
+          }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 12,
+        "item": {
+          "@type": "Product",
+          "name": "HSK 4 Vocabulary PDF - 600 Words",
+          "description": "Solidify your foundation with 600 intermediate words and 1,200 practical examples.",
+          "brand": { "@type": "Brand", "name": "CILI - Learn Chinese" },
+          "category": "Educational Materials",
+          "offers": {
+            "@type": "AggregateOffer",
+            "lowPrice": "11.99",
+            "highPrice": "16.99",
+            "priceCurrency": "USD",
+            "offerCount": 2,
+            "availability": "https://schema.org/InStock",
+            "url": "https://cililearnchinese.gumroad.com/l/hsk4-chinese-vocabulary-standard"
+          }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 13,
+        "item": {
+          "@type": "Product",
+          "name": "HSK 3 Vocabulary PDF - 300 Words",
+          "description": "Move beyond the basics with 300 pre-intermediate words and 600 context-rich examples.",
+          "brand": { "@type": "Brand", "name": "CILI - Learn Chinese" },
+          "category": "Educational Materials",
+          "offers": {
+            "@type": "AggregateOffer",
+            "lowPrice": "7.99",
+            "highPrice": "11.99",
+            "priceCurrency": "USD",
+            "offerCount": 2,
+            "availability": "https://schema.org/InStock",
+            "url": "https://cililearnchinese.gumroad.com/l/hsk3-chinese-vocabulary-standard"
+          }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 14,
+        "item": {
+          "@type": "Product",
+          "name": "HSK 2 Vocabulary PDF - 150 Words",
+          "description": "Expand your vocabulary with 150 beginner words and 300 easy-to-understand sentences.",
+          "brand": { "@type": "Brand", "name": "CILI - Learn Chinese" },
+          "category": "Educational Materials",
+          "offers": {
+            "@type": "AggregateOffer",
+            "lowPrice": "4.99",
+            "highPrice": "7.99",
+            "priceCurrency": "USD",
+            "offerCount": 2,
+            "availability": "https://schema.org/InStock",
+            "url": "https://cililearnchinese.gumroad.com/l/hsk2-chinese-vocabulary-standard"
+          }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 15,
+        "item": {
+          "@type": "Product",
+          "name": "HSK 1 Vocabulary PDF - 150 Words",
+          "description": "Start your journey. Learn the absolute essential 150 words and 300 foundational sentences.",
+          "brand": { "@type": "Brand", "name": "CILI - Learn Chinese" },
+          "category": "Educational Materials",
+          "offers": {
+            "@type": "AggregateOffer",
+            "lowPrice": "2.99",
+            "highPrice": "4.99",
+            "priceCurrency": "USD",
+            "offerCount": 2,
+            "availability": "https://schema.org/InStock",
+            "url": "https://cililearnchinese.gumroad.com/l/hsk1-chinese-vocabulary-standard"
+          }
+        }
+      }
+    ]
   }
   </script>
 
@@ -115,21 +417,53 @@
           "@type": "Answer",
           "text": "After a secure checkout via Gumroad, you'll receive an instant download link on the confirmation page. You'll also get an email with a permanent link to your library."
         }
+      },
+      {
+        "@type": "Question",
+        "name": "What HSK levels do you cover?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We cover all six HSK levels (HSK 1 through HSK 6), totaling over 5,000 vocabulary words. Each level is available individually or as value bundles (HSK 1-3, HSK 4-6, and the complete HSK 1-6 pack)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How many words and sentences are included in each HSK level?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "HSK 1: 150 words (300-600 sentences). HSK 2: 150 words (300-600 sentences). HSK 3: 300 words (600-1,200 sentences). HSK 4: 600 words (1,200-2,400 sentences). HSK 5: 1,300 words (2,600-5,200 sentences). HSK 6: 2,500 words (5,000-10,000 sentences). The range depends on whether you choose Standard (2 sentences per word) or Extended (4 sentences per word)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use these PDFs with Anki or other flashcard apps?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our PDFs are optimized for reading and printing. While they are not directly importable into Anki, the structured format (word, Pinyin, translation, example sentences) makes it easy to create your own flashcards from the content."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are the Chinese characters simplified or traditional?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "All CILI materials use simplified Chinese characters, which is the standard for HSK exams and is used in mainland China. Each word includes Pinyin romanization and English translations for easy learning."
+        }
       }
     ]
   }
   </script>
 
-  <!-- Google Analytics 4 — Replace G-XXXXXXXXXX with your actual Measurement ID -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-G0VQ1MB8SZ"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX');
+    gtag('config', 'G-G0VQ1MB8SZ');
   </script>
 
-  <title>CILI - Learn Chinese | HSK 1-6 Vocabulary & Example Sentence PDFs</title>
+  <title>HSK 1-6 Vocabulary & Example Sentence PDFs | CILI Learn Chinese</title>
 </head>
 
 <body>

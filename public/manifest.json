@@ -1,0 +1,21 @@
+{
+  "name": "CILI - Learn Chinese",
+  "short_name": "CILI",
+  "description": "Premium HSK 1-6 vocabulary PDFs with example sentences, Pinyin, and translations.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0A0F1C",
+  "theme_color": "#0A0F1C",
+  "icons": [
+    {
+      "src": "/cili-favicon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/cili-favicon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
