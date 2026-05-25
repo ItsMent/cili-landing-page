@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { CheckCircle, ShieldCheck, ChevronLeft, Zap } from 'lucide-react';
+import { CheckCircle, ShieldCheck, ChevronLeft } from 'lucide-react';
 import { getProductById, getRelatedProducts } from '../data/products';
 import SkeletonImage from '../components/SkeletonImage';
 
@@ -66,7 +66,7 @@ export default function ProductPage() {
         "@type": "Offer",
         "price": product.price,
         "priceCurrency": "USD",
-        "availability": product.isSentencePack ? "https://schema.org/PreOrder" : "https://schema.org/InStock",
+        "availability": "https://schema.org/InStock",
         "url": canonicalUrl
       }
     })
@@ -219,22 +219,16 @@ export default function ProductPage() {
                     Preview PDF
                   </a>
                 )}
-                {product.isSentencePack ? (
-                  <button className="btn btn-primary" style={{ padding: '14px 40px', opacity: 0.7, cursor: 'not-allowed' }} disabled>
-                    <Zap size={18} /> Coming Soon
-                  </button>
-                ) : (
-                  <a
-                    href={currentLink}
-                    className="btn btn-primary"
-                    data-gumroad-overlay-checkout="true"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{ padding: '14px 40px', textDecoration: 'none' }}
-                  >
-                    Buy Now
-                  </a>
-                )}
+                <a
+                  href={currentLink}
+                  className="btn btn-primary"
+                  data-gumroad-overlay-checkout="true"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ padding: '14px 40px', textDecoration: 'none' }}
+                >
+                  Buy Now
+                </a>
               </div>
               <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', marginTop: '16px' }}>Secure 1-click checkout powered by Gumroad</p>
             </div>

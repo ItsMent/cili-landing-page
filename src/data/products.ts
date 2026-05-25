@@ -228,20 +228,20 @@ export const products: Product[] = [
   {
     id: 'pro-sentences',
     name: 'Pro Mastery Sentence Pack',
-    description: '20,000 extensive sentences. A massive expansion for deep linguistic immersion.',
+    description: '17,500 extensive sentences. A massive expansion for deep linguistic immersion.',
     price: '79.99',
     link: 'https://cililearnchinese.gumroad.com/l/pro-sentences',
     image: sentencePackImg,
-    tag: 'DEEP IMMERSION \u2022 20K',
+    tag: 'DEEP IMMERSION \u2022 17.5K',
     isSentencePack: true,
-    seoTitle: 'Chinese Pro Mastery Sentence Pack - 20,000 Extensive Sentences PDF',
-    seoDescription: '20,000 extensive Chinese sentences for deep linguistic immersion. A massive expansion for serious Mandarin learners. Instant PDF download — bonus TSV and JSON included for Anki and any flashcard app.'
+    seoTitle: 'Chinese Pro Mastery Sentence Pack - 17,500 Extensive Sentences PDF',
+    seoDescription: '17,500 extensive Chinese sentences for deep linguistic immersion. A massive expansion for serious Mandarin learners. Instant PDF download — bonus TSV and JSON included for Anki and any flashcard app.'
   },
   {
     id: 'master-sentences',
     name: 'Master Sentence Pack',
     description: '30,000 ultimate sentences. The complete linguistic database for native-level fluency.',
-    price: '89.99',
+    price: '119.99',
     link: 'https://cililearnchinese.gumroad.com/l/master-sentences',
     image: sentencePackImg,
     tag: 'COMPLETE IMMERSION \u2022 30K',

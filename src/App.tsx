@@ -646,7 +646,6 @@ function HomePage() {
                           </p>
                           <div className="price-tag" style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
                             ${product.price}
-                            <span style={{ fontSize: '0.8rem', fontWeight: 600, color: '#f59e0b', background: 'rgba(245, 158, 11, 0.1)', padding: '4px 10px', borderRadius: 'var(--radius-full)', border: '1px solid rgba(245, 158, 11, 0.3)' }}>Coming Soon</span>
                           </div>
                         </div>
                         {isFlagship && (
