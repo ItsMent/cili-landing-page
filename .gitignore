@@ -32,3 +32,5 @@ tmp/
 .env.*
 *.pem
 credentials.json
+
+.vercel

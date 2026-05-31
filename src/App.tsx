@@ -622,9 +622,9 @@ function HomePage() {
                     p.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
                     p.tag.toLowerCase().includes(searchQuery.toLowerCase())
                   )).map((product) => {
-                    // Extract sentence count for display
-                    const countMatch = product.tag.match(/(\d+)K/i);
-                    const count = countMatch ? countMatch[1] : '30';
+                    // Derive the sentence count from the tag (supports decimals, e.g. "17.5K")
+                    const kMatch = product.tag.match(/([\d.]+)K/i);
+                    const sentenceTotal = kMatch ? Math.round(parseFloat(kMatch[1]) * 1000) : 30000;
                     const isFlagship = product.tag.includes('COMPLETE IMMERSION');
                     const isPopular = product.id === 'immersion-sentences';
 
@@ -638,7 +638,7 @@ function HomePage() {
                         <div className="sentence-info">
                           <span className="tier-badge">{product.tag.split(' \u2022 ')[0]}</span>
                           <div className="sentence-count">
-                            {count},000 <span>Sentences</span>
+                            {sentenceTotal.toLocaleString()} <span>Sentences</span>
                           </div>
                           <h3>{product.name}</h3>
                           <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem', marginBottom: '16px' }}>
